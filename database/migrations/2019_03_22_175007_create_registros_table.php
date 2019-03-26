@@ -15,6 +15,19 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('carro_id');
+
+            $table->string('motorista',15);
+            $table->string('endereco', 256);
+
+            $table->dateTime('data_inc');
+            $table->dateTime('data_pos');
+
+            $table->float('latitude', 10,2);
+            $table->float('longitude', 10, 2);
+
+            $table->foreign('carro_id')->references('id')->on('carros');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

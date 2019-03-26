@@ -15,6 +15,13 @@ class CreateMacrosTable extends Migration
     {
         Schema::create('macros', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('carro_id');
+
+            $table->string('descricao',256);
+            $table->text('apr_proc');
+
+            $table->foreign('carro_id')->references('id')->on('carros');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -13,8 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::namespace('API')->group(function () {
-    Route::get('/v1/receberjson', function (){
-        return json_encode(['status' => true, "msg" => "Teste com sucesso"]);
-    });
-});
+Route::post('/v1/receberjson', 'DataProcessController@process');
+

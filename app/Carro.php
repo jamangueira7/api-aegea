@@ -11,7 +11,7 @@ class Carro extends Model
     use SoftDeletes;
     protected  $table = "carros";
 
-    protected $fillable = ['placa','numero_serial','id_interno','updated','','',];
+    protected $fillable = ['placa','numero_serial','id_interno'];
 
     protected $guarded = ['id'];
 

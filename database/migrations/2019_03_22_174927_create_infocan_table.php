@@ -15,6 +15,16 @@ class CreateInfocanTable extends Migration
     {
         Schema::create('infocan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('carro_id');
+
+            $table->float('combustivel',10,2);
+
+            $table->boolean('cinto');
+            $table->boolean('freio');
+            $table->boolean('limp');
+
+            $table->foreign('carro_id')->references('id')->on('carros');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreateCarrosTable extends Migration
     {
         Schema::create('carros', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('placa',15);
+
+            $table->bigInteger('numero_serial');
+            $table->bigInteger('id_interno');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ class Evento extends Model
     use SoftDeletes;
     protected  $table = "eventos";
 
-    protected $fillable = ['descricao','scr'];
+    protected $fillable = ['descricao','src'];
 
     protected $guarded = ['id','carro_id'];
 
