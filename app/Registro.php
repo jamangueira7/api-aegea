@@ -9,7 +9,7 @@ class Registro extends Model
 {
     //
     use SoftDeletes;
-    protected  $table = "registros";
+    protected  $table = "registffros";
 
     protected $fillable = ['motorista','endereco', 'data_inc', 'data_pos', 'latitude', 'longitude'];
 
